@@ -5,7 +5,11 @@ ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY), y)
 ifeq ($(MSM_ARCH), $(filter $(MSM_ARCH), zeus cupid ingres zizhan thor))
     CAMERA_DTBO_CONFIG_MK=waipio
 else
-    CAMERA_DTBO_CONFIG_MK=MSM_ARCH
+    ifeq ($(MSM_ARCH), $(filter $(MSM_ARCH), vili))
+        CAMERA_DTBO_CONFIG_MK=lahaina
+    else
+        CAMERA_DTBO_CONFIG_MK=MSM_ARCH
+    endif
 endif
 include $(CAMERA_DEVICETREE_ROOT)/config/$(CAMERA_DTBO_CONFIG_MK).mk
 

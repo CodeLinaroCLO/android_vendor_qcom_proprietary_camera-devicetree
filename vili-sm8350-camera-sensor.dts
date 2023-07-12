@@ -1,0 +1,17 @@
+/dts-v1/;
+/plugin/;
+
+#include <dt-bindings/clock/qcom,gcc-lahaina.h>
+#include <dt-bindings/clock/qcom,camcc-lahaina.h>
+#include <dt-bindings/interconnect/qcom,lahaina.h>
+#include <dt-bindings/interrupt-controller/arm-gic.h>
+#include <dt-bindings/regulator/qcom,rpmh-regulator-levels.h>
+
+#include "vili-sm8350-camera-sensor.dtsi"
+
+/ {
+	model = "Vili based on Qualcomm Technologies, Inc SM8350";
+	compatible = "qcom,lahaina-mtp", "qcom,lahaina", "qcom,mtp";
+	qcom,board-id = <0x10008 0>;
+	xiaomi,miboard-id = <0x8 0>;
+};
